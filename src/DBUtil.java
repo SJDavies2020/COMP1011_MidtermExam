@@ -50,6 +50,7 @@ public class DBUtil {
                 String fullName = resultSet.getString(String.valueOf("FullName"));
 
                 String[] splitName = fullName.split(" ");
+
                 arrlist.add(resultSet.getString(splitName[1]));
                 arrlist.add(resultSet.getString(splitName[2]));
                 arrlist.add(resultSet.getString(String.valueOf("Gender")));
