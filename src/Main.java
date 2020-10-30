@@ -12,7 +12,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("AthleteView.fxml"));
         primaryStage.setTitle("COMP1011_Midterm");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
