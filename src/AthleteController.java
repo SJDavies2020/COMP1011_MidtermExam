@@ -36,6 +36,9 @@ public class AthleteController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+    }
+    public void getAthletes()
+    {
         id.setCellValueFactory(new PropertyValueFactory<AthleteModel,Integer>("id"));
         FName.setCellValueFactory(new PropertyValueFactory<AthleteModel,String>("FirstName"));
         YOB.setCellValueFactory(new PropertyValueFactory<AthleteModel,Integer>("LastName"));
@@ -48,5 +51,7 @@ public class AthleteController implements Initializable {
             e.printStackTrace();
         }
     }
+
+
 
 }

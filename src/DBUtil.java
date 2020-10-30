@@ -4,8 +4,8 @@ import java.sql.ResultSet;
 
 public class DBUtil {
     // User Name and Password
-    private static String user="stevendavies";
-    private static String password="Bonnied029$";
+    private static String user="student";
+    private static String password="student";
 
     public static ArrayList<AthleteModel> getAllAthletes() throws SQLException {
 
@@ -23,14 +23,12 @@ public class DBUtil {
             statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             // 3 Execute the SQL to get the data and place in
 
-            ResultSet rs = statement.executeQuery("SELECT * FROM tblCharsStat");
-
+            ResultSet rs = statement.executeQuery("SELECT * FROM raceresults");
             rs.last();
 
             int totalRowsResult = rs.getRow() ;
 
-            resultSet = statement.executeQuery("SELECT * FROM tblCharsStat");
-            // 4 Loop over Data (12 Rows make up 1 Object)
+            resultSet = statement.executeQuery("SELECT * FROM raceresults");
             resultSet.first();
 
             for (int b = 1; b <= totalRowsResult ; b++)
@@ -51,8 +49,8 @@ public class DBUtil {
 
                 String[] splitName = fullName.split(" ");
 
-                arrlist.add(resultSet.getString(splitName[1]));
-                arrlist.add(resultSet.getString(splitName[2]));
+                arrlist.add(splitName[0]);
+                arrlist.add(splitName[1]);
                 arrlist.add(resultSet.getString(String.valueOf("Gender")));
                 arrlist.add(resultSet.getString(String.valueOf("yearOfBirth")));
                 arrlist.add(resultSet.getString(String.valueOf("run1")));
